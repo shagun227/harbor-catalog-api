@@ -1,0 +1,13 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: sqlite:////app/data/catalog.db
+      SEED_ON_STARTUP: "true"
+    volumes:
+      - catalog-data:/app/data
+
+volumes:
+  catalog-data:
